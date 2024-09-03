@@ -2,12 +2,15 @@
 # Date:03-09-2024
 
 
+
+
 # EX01 Developing a Simple Webserver
 
 ## AIM:
 To develop a simple webserver to serve html pages.
 
 ## DESIGN STEPS:
+
 ### Step 1: 
 HTML content creation.
 
@@ -22,6 +25,7 @@ Serving the HTML pages.
 
 ### Step 5:
 Testing the webserver.
+
 
 ## PROGRAM:
 ```
@@ -88,6 +92,7 @@ print("my webserver is running...")
 httpd.serve_forever()
 
 ```
+
 ## OUTPUT:
 
 ![image](https://github.com/user-attachments/assets/81b12071-0755-4809-9c6c-b5d7f7ba1d42)
