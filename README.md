@@ -1,5 +1,8 @@
+# Name:Ramya P
+# Date:03-09-2024
+
+
 # EX01 Developing a Simple Webserver
-## Date:
 
 ## AIM:
 To develop a simple webserver to serve html pages.
@@ -22,34 +25,74 @@ Testing the webserver.
 
 ## PROGRAM:
 ```
-from http.server import HTTPServer,BaseHTTPRequestHandler
-
-content='''
-<!doctype html>
+from http.server import HTTPServer, BaseHTTPRequestHandler
+content = """
 <html>
-<head>
-<title> My Web Server</title>
-</head>
-<body>
-<h1>Welcome</h1>
-</body>
-</html>
-'''
+     <title> Software Companies Revenue </title>
+     <body>
+           <table border = "2" cellspacing = "10" cellpading = "6">
+              <caption>TOP SIX REVENUE SOFTWARE COMPANIES </caption>
+              <tr>
+                  <th>S.NO</th>
+                  <th>COMPANY</th>			
+                  <th>REVENUE</th>
+              </tr>
+              <tr>
+                  <td>1</td>
+                  <td>Microsoft</td>
+                  <td>65 Billion</td>
+             </tr>
+             <tr>
+                  <td>2</td>
+                  <td>Oracle</td>
+                  <td>29.6 Billion</td>
+             </tr>
+             <tr>
+                  <td>3</td>
+                  <td>IBM</td>
+                  <td>29.1Billion</td>
+            </tr>
+            <tr>
+                  <td>4</td>
+                  <td>SAP</td>
+                  <td>6.4 Billion</td>
+            </tr>
+            <tr>
+                  <td>5</td>
+                  <td>Symantic</td>
+                  <td>5.6 Billion</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Adobe Inc</td>
+                <td>19.8 Billion</td>
+          </tr>
+           
+            
+        
 
-class MyServer(BaseHTTPRequestHandler):
+       </table>
+    </body>
+</html>
+"""
+class myhandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        print("Get request received...")
-        self.send_response(200) 
-        self.send_header("content-type", "text/html")       
+        print("request received")
+        self.send_response(200)
+        self.send_header('content-type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())
-
-print("This is my webserver") 
-server_address =('',8000)
-httpd = HTTPServer(server_address,MyServer)
+server_address = ('',8000)
+httpd = HTTPServer(server_address,myhandler)
+print("my webserver is running...")
 httpd.serve_forever()
+
 ```
 ## OUTPUT:
+
+![image](https://github.com/user-attachments/assets/81b12071-0755-4809-9c6c-b5d7f7ba1d42)
+
+
 
 
 ## RESULT:
